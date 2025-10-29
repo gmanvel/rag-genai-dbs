@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    environment:
+      - RUNTIME_MODE=docker
+    ports:
+      - "8501:8501"
+    depends_on:
+      - qdrant
+      - ollama
+      - vlm
+    volumes:
+      - ./data:/app/data
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./models:/root/.ollama
+  vlm:
+    image: vlm-local-stub:latest
+    command: ["/bin/sh", "-c", "echo 'Placeholder VLM service. Implement local Qwen pipeline here.' && sleep infinity"]
+    volumes:
+      - ./models:/models
+
+volumes:
+  qdrant_storage:

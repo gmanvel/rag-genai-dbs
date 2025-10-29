@@ -1,0 +1,5 @@
+streamlit
+qdrant-client
+llama-index-core
+llama-index-embeddings-ollama
+requests

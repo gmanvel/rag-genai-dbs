@@ -1,0 +1,32 @@
+# Streamlit for web UI
+streamlit==1.31.1
+
+# Qdrant client for vector database
+qdrant-client==1.15.1
+
+# LlamaIndex for text processing and embeddings
+llama-index-core==0.10.12
+llama-index-embeddings-ollama==0.1.2
+
+# PyTorch for deep learning models
+torch==2.2.0
+torchvision==0.17.0
+
+# ColPali for vision embeddings
+colpali-engine==0.3.12
+
+# Transformers for Qwen VLM
+transformers==4.45.0
+accelerate==0.26.1
+qwen-vl-utils==0.0.8
+
+# PDF processing (for future use)
+pdf2image==1.17.0
+Pillow==10.2.0
+
+# Utilities
+requests==2.31.0
+tqdm==4.66.1
+
+# Additional dependencies
+numpy==1.26.3
